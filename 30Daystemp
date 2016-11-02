@@ -1,4 +1,4 @@
-REM 30DaysTemp
+REM 30DaysTemp (For windows)
 REM Moves all desktop files to %UserProfile%\Documents\30Daystemp\(current date)
 REM C:\Users\Public\Desktop = persisten .lnk for all Desktops
 
