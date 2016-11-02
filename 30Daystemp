@@ -1,0 +1,5 @@
+REM Cleans desktop and moves files to %UserProfile%\Documents\30Daystemp\(YYYY-MM-DD)
+
+for /f "skip=1" %%d in ('wmic os get localdatetime') do if not defined mydate set mydate=%%d
+md %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
+MOVE %UserProfile%\Desktop\* %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
