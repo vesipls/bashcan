@@ -1,5 +1,13 @@
-REM Cleans desktop and moves files to %UserProfile%\Documents\30Daystemp\(YYYY-MM-DD)
+REM 30DaysTemp
+REM Moves all desktop files to %UserProfile%\Documents\30Daystemp\(current date)
+REM C:\Users\Public\Desktop = persisten .lnk for all Desktops
 
 for /f "skip=1" %%d in ('wmic os get localdatetime') do if not defined mydate set mydate=%%d
 md %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
 MOVE %UserProfile%\Desktop\* %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
+
+REM Removes older than 30 days folders
+
+set max_days=30
+set dump_path=%UserProfile%\Documents\30Daystemp\
+forfiles -p %dump_path% -d -%max_days% -c "cmd /c IF @isdir == TRUE rd /S /Q @path"
