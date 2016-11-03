@@ -1,0 +1,7 @@
+REM HP software remover
+REM Removes any hp bloatware installed on elitebooks
+
+wmic product where vendor="HP" call uninstall
+
+
+REM To be continued
