@@ -1,4 +1,4 @@
-REM 30DaysTemp (For windows)
+REM 30DaysTemp
 REM Moves all desktop files to %UserProfile%\Documents\30Daystemp\(current date)
 REM C:\Users\Public\Desktop = persisten .lnk for all Desktops
 
@@ -7,7 +7,15 @@ md %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
 MOVE %UserProfile%\Desktop\* %UserProfile%\Documents\30Daystemp\%mydate:~0,8%
 
 REM Removes older than 30 days folders
-
 set max_days=30
 set dump_path=%UserProfile%\Documents\30Daystemp\
 forfiles -p %dump_path% -d -%max_days% -c "cmd /c IF @isdir == TRUE rd /S /Q @path"
+
+REM Poistetaan tyhjät kansiot
+pushd %UserProfile%\Documents\30Daystemp
+for /f "delims=" %%D in ('dir /b /ad') do (
+    dir "%%D" | find "0 File(s)">nul && (
+        rd "%%D"
+        )
+    )
+popd
