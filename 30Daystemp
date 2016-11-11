@@ -11,7 +11,7 @@ set max_days=30
 set dump_path=%UserProfile%\Documents\30Daystemp\
 forfiles -p %dump_path% -d -%max_days% -c "cmd /c IF @isdir == TRUE rd /S /Q @path"
 
-REM Poistetaan tyhjät kansiot
+REM Removing empty folders
 pushd %UserProfile%\Documents\30Daystemp
 for /f "delims=" %%D in ('dir /b /ad') do (
     dir "%%D" | find "0 File(s)">nul && (
