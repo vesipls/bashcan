@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# THIS THING IS CURRENTLY BROKEN, WILL UPDATE WHEN IT GETS FIXED AND I REMEMBER GITHUB
 
 import re
 import urllib
