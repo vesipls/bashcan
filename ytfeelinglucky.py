@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# THIS THING IS CURRENTLY BROKEN, WILL UPDATE WHEN IT GETS FIXED AND I REMEMBER GITHUB
+# THIS THING IS CURRENTLY BROKEN, WILL REMAIN BROKEN FOR A WHILE, DOWNLOAD SPEED 1/4th of when project originally started...
 
 import re
 import urllib
